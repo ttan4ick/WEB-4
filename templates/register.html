@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<h2>Форма регистрации</h2>
+{% if password_error%}
+    <h3>Есть различия в паролях.</h3>
+{% endif %}
+<div>
+    <form class="login_form" method="post">
+        <input type="text" class="form-control" id="email" placeholder="Введите логин или электронную почту" name="email">
+        <input type="text" class="form-control" id="password" placeholder="Введите пароль" name="password">
+        <input type="text" class="form-control" id="retry_password" placeholder="Повторите пароль" name="retry_password">
+        <input type="text" class="form-control" id="surname" placeholder="Введите фамилию" name="surname">
+        <input type="text" class="form-control" id="name" placeholder="Введите имя" name="name">
+        <input type="text" class="form-control" id="age" placeholder="Введите возраст" name="age">
+        <input type="text" class="form-control" id="position" placeholder="Введите позицию" name="position">
+        <input type="text" class="form-control" id="speciality" placeholder="Введите специальность" name="speciality">
+        <input type="text" class="form-control" id="address" placeholder="Введите адресс" name="address">
+        <button type="submit" class="btn btn-primary">Записаться</button>
+    </form>
+</div>
+{% endblock %}
