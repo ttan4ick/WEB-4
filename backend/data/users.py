@@ -23,6 +23,7 @@ class User(SqlAlchemyBase, UserMixin):
         sqlalchemy.DateTime, default=datetime.datetime.now
     )
     jobs = relationship("Jobs", back_populates="user")
+    departaments = relationship("Departament", back_populates="user")
 
     def set_password(self, password):
         self.hashed_password = generate_password_hash(password)

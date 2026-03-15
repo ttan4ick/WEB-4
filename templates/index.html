@@ -2,6 +2,11 @@
 
 {% block content %}
 <meta charset="UTF-8">
+<p>
+    <a href="/departaments" class="btn btn-secondary">
+        Перейти к департаментам
+    </a>
+</p>
 <h2 align="center">Works log</h2>
 {% if current_user.is_authenticated %}
     <a href="jobs" class="btn btn-secondary">Добавить работу</a>
