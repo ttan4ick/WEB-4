@@ -28,7 +28,18 @@
             <td class="ordinary" bgcolor="#ffeeff" align="center">Is not finished</td>
             {% endif %}
         </tr>
-
+        <tr>
+            {% if current_user.is_authenticated and current_user == job.user %}
+                <div>
+                    <a href="/jobs/{{ job.id }}" class="btn btn-warning">
+                        Изменить
+                    </a>
+                    <a href="/jobs_delete/{{ job.id }}" class="btn btn-danger">
+                        Удалить
+                    </a>
+                </div>
+            {% endif %}
+        </tr>
     </table>
 </div>
 <br>
