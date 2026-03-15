@@ -8,6 +8,7 @@ from flask_login import (
 )
 from backend.data import db_session
 from backend.data.users import User
+from backend.data.jobs_type import JobsType
 from backend.data.jobs import Jobs
 from backend.data.departaments import Departament
 from backend.login_form import LoginForm
